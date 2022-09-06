@@ -1,0 +1,9 @@
+{
+	"name": "lesson5",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d6b1ed68-4229-43dc-b87f-a72f082a293a",
+		"tenantId": "9b7cbd77-6d6b-4879-8aba-63d7dfb18472"
+	}
+}

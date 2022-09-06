@@ -1,0 +1,17 @@
+{
+	"name": "IRCentralIndia",
+	"properties": {
+		"type": "Managed",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "Central India",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 5,
+					"cleanup": false
+				}
+			}
+		}
+	}
+}

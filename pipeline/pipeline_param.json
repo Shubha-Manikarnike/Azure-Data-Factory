@@ -1,0 +1,53 @@
+{
+	"name": "pipeline_param",
+	"properties": {
+		"activities": [
+			{
+				"name": "dfsalesaggregate_param",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dfsalesaggregate_param",
+						"type": "DataFlowReference",
+						"parameters": {
+							"custid": {
+								"value": "@pipeline().parameters.pipeline_param",
+								"type": "Expression"
+							}
+						}
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "AzureDataLakeStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "stage/stagedir"
+					},
+					"integrationRuntime": {
+						"referenceName": "IRCentralIndia",
+						"type": "IntegrationRuntimeReference"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"parameters": {
+			"pipeline_param": {
+				"type": "int",
+				"defaultValue": 30070
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-09-06T09:26:20Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
